@@ -1,0 +1,825 @@
+
+
+
+
+
+
+
+
+
+
+
+
+OK... COMEÇAMOS COM O HTML SEM NADA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+VAMOS COMEÇAR COM O HERO, MAS NÃO FAREMOS O HAMBURGER MENU ATÉ O FINAL...
+
+
+
+
+
+
+
+
+--> AGORA FAREMOS A NAVBAR DESKTOP...
+
+
+
+
+
+
+
+
+
+--> COMEÇAMOS ASSIM:
+
+
+    <!-- Hero Section -->
+     <section id="hero">
+      
+     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+USAREMOS UM CONTAINER PARA O HERO... 
+
+
+POR ISSO ESCREVEMOS ASSIM:
+
+
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="container max-w-6xl"></div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO PQ CONTAINERS DE 'HERO' GERALMENTE POSSUEM UMA MAX-WIDTH DE 6XL... parece 
+        ser a melhor ideia, para esse tipo de conteúdo... (72rem)...
+
+
+
+
+    --> usamos mx-auto, para mover tudo para o centro...
+
+
+
+    --> para padding, px-6... 
+
+    --> py de 12...
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="container max-w-6xl mx-auto px-6 py-12"></div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS EM TELAS MEDIUM E HIGHER, COLOCAMOS 'PX' de 0...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- DENTRO DISSO, TEREMOS UMA TAG DE 'nav'...
+
+
+
+
+
+
+
+
+--> TEREMOS 1 LOGO E O MENU...
+
+
+
+
+
+
+-> SERÁ UM FLEX ROW, JUSTIFY BETWEEN, 
+
+    E ITEMS-CENTER, PARA QUE FIQUEM ALINHADOS  VERTICALMENTE..
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+        <!-- Nav/Logo Container -->
+        <nav class="flex justify-center items-center">
+          <!-- Image/Logo - (Left Side) -->
+          <img src="" alt="" class="w-full" />
+
+          <!-- Links/Buttons - (Right Side) -->
+          <div class="flex space-x-2"></div>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMEÇAMOS ASSIM, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+--> MAS QUEREMOS QUE O BACKGROUND SEJA TRANSPARENTE, EM TUDO ISSO...
+
+
+
+
+
+POR ISSO ESCREVEMOS ASSIM:
+
+
+
+
+        <!-- Nav/Logo Container -->
+        <nav class="flex justify-center items-center bg-transparent">
+          <!-- Image/Logo - (Left Side) -->
+          <img src="" alt="" class="w-full" />
+
+          <!-- Links/Buttons - (Right Side) -->
+          <div class="flex space-x-2"></div>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+QUEREMOS QUE SEJA SEMPRE 1 ROW, PQ 
+
+ESSE MENU NÃO VAI APARECER NO MOBILE (teremos um hamburger, em vez disso )
+
+
+
+
+
+
+
+
+
+
+
+
+--> queremos que esse navbar apareça SOMENTE EM TELAS MD OU MAIORES...
+
+
+
+
+
+POR ISSO ESCREVEMOS ASSIM:
+
+
+
+
+        <!-- Nav/Logo Container -->
+        <nav class="hidden md:flex justify-center items-center bg-transparent">
+          <!-- Image/Logo - (Left Side) -->
+          <img src="" alt="" class="w-full" />
+
+          <!-- Links/Buttons - (Right Side) -->
+          <div class="flex space-x-2"></div>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMECEI COM UM CÓDIGO ASSIM:
+
+
+
+
+
+
+
+
+
+      <div class="container max-w-6xl mx-auto px-6 py-12 md:px-0 bg-yellow-500">
+        <!-- Nav/Logo Container -->
+        <nav class="hidden md:flex justify-between items-center bg-transparent">
+          <!-- Image/Logo - (Left Side) -->
+          <img src="images/logo.svg" alt="" class="max-w36" />
+          <!-- Links/Buttons - (Right Side) -->
+          <div class="flex space-x-10">
+            <div>About</div>
+            <div>Careers</div>
+            <div>Events</div>
+            <div>Products</div>
+            <div>Support</div>
+          </div>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+O container está impedindo meus elementos de irem mais para os lados...
+
+
+Ainda não coloquei minha image como background de essa image...
+
+
+
+
+
+
+
+
+
+
+--> acho que deverá ser posicionada absolutamente, ou algo assim...
+
+
+
+
+
+
+
+
+
+
+
+
+
+TENTEI ESCREVER TIPO ASSIM:
+
+
+
+
+
+
+
+.background-hero {
+  background-image: url('../images/desktop/image-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+
+E USAR ESSA CLASS TIPO AQUI, na section:
+
+
+
+
+
+    <section id="hero" class="background-hero">
+      <div class="container max-w-6xl mx-auto px-6 py-12 md:px-0">
+        <!-- Nav/Logo Container -->
+        <nav class="hidden md:flex justify-between items-center bg-transparent text-white">
+          <!-- Image/Logo - (Left Side) -->
+          <img src="images/logo.svg" alt="logo" class="max-w-36" />
+          <!-- Links/Buttons - (Right Side) -->
+          <div class="flex space-x-10">
+            <div>About</div>
+            <div>Careers</div>
+            <div>Events</div>
+            <div>Products</div>
+            <div>Support</div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR TAMBÉM NOS EXPLICA QUE PRECISAMOS USAR 1 CUSTOM CSS...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ELE ESCREVEU TIPO ASSIM:
+
+
+
+
+.background-hero {
+  background-image: url('../images/desktop/image-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+FOI PRATICAMENTE A MESMA COISA QUE EU ESCREVI...
+
+
+
+
+
+
+
+
+
+
+--> AÍ O PROFESSOR USOU 1 MEDIA QUERY, PARA SUBSTITUIR ESSA IMAGE POR OUTRA, EM MOBILE..
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+.background-hero {
+  background-image: url('../images/desktop/image-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 576px) {
+  .background-hero {
+    background-image: url('../images/mobile/image-hero.jpg');
+    background-position: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+PRONTO...
+
+
+
+
+
+
+
+AÍ O PROFESSOR PASAS A ESTILIZAR O MENU...
+
+
+
+
+
+
+
+
+
+-> COMO É UM FLEXBOX,
+
+
+
+ELE ESCREVE ASSIM:
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section id="hero" class="background-hero">
+      <div class="container max-w-6xl mx-auto px-6 py-12 md:px-0">
+        <!-- Nav/Logo Container -->
+        <nav
+          class="flex justify-between items-center mx-10 xl:mx-0 bg-transparent font-bold text-white "
+        >
+          <!-- Image/Logo - (Left Side) -->
+          <img src="images/logo.svg" alt="logo" class="max-w-36" />
+          <!-- Links/Buttons/Menu - (Right Side) -->
+          <div class="hidden h-10 font-alata md:flex items-center space-x-10">
+            <div class="group">
+              <a href="#">About</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Careers</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Events</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Products</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Contact</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... MAS TAMBÉM QUEREMOS ADICIONAR UMA CAIXA DE TEXTO NO MEIO DO CONTEÚDO, NO MEIO DA SECTION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> FAZEMOS ISSO COM 1 NOVA DIV,
+
+TIPO ASSIM:
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section id="hero" class="background-hero">
+      <div class="container max-w-6xl mx-auto px-6 py-12 md:px-0">
+        <!-- Nav/Logo Container -->
+        <nav
+          class="flex justify-between items-center mx-10 xl:mx-0 bg-transparent font-bold text-white"
+        >
+          <!-- Image/Logo - (Left Side) -->
+          <img src="images/logo.svg" alt="logo" class="max-w-36" />
+          <!-- Links/Buttons/Menu - (Right Side) -->
+          <div class="hidden h-10 font-alata md:flex items-center space-x-10">
+            <div class="group">
+              <a href="#">About</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Careers</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Events</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Products</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Contact</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="max-w-lg mt-32 mb-32 p-4 font-sans text-4xl text-white uppercase border-2 md:p-10 md:m-3 md:mx-0 md:text-6xl"
+        >
+          Impressive Experiences That Deliver
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+ok... mas o styling ainda está errado, por alguma razão...
+
+
+
+
+
+
+
+
+consertei, ficou tipo assim:
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section id="hero" class="background-hero">
+      <div class="container max-w-6xl mx-auto px-6 py-12 md:px-0">
+        <!-- Nav/Logo Container -->
+        <nav
+          class="flex justify-between items-center mx-10 xl:mx-0 bg-transparent font-bold text-white"
+        >
+          <!-- Image/Logo - (Left Side) -->
+          <img src="images/logo.svg" alt="logo" class="max-w-36" />
+          <!-- Links/Buttons/Menu - (Right Side) -->
+          <div class="hidden h-10 font-alata md:flex items-center space-x-8">
+            <div class="group">
+              <a href="#">About</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Careers</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Events</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Products</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+            <div class="group">
+              <a href="#">Contact</a>
+              <div
+                class="mx-2 group-hover:border-b group-hover:border-blue-50"
+              ></div>
+            </div>
+          </div>
+        </nav>
+        <div
+          class="max-w-lg mt-32 mb-32 p-4 font-sans text-4xl text-white uppercase border-2 md:p-10 md:m-32 md:mx-12 md:text-6xl lg:mx-10 xl:mx-4"
+        >
+          Impressive Experiences That Deliver
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

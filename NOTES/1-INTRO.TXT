@@ -1,0 +1,96 @@
+
+
+
+
+
+
+
+
+O PRÓXIMO PROJETO É O SITE DE 'LOOPSTUDIOS'...
+
+
+
+
+
+
+
+
+--> É TIPO UM SITE DE TECH..
+
+
+
+
+
+
+
+
+
+--> CRIAREMOS UM HAMBURGER MENU NESSE PROJECT..
+
+
+
+
+
+
+
+
+
+--> TEMOS 1 IMAGE, COM 1 TEXT BLOCK EM CIMA DA IMAGE,
+
+AÍ UMA CREATION SECTION..
+
+
+
+
+
+
+
+
+
+
+
+--> NA SECTION DE 'CREATION',
+
+    TEMOS 1 GRID/FLEXBOX, COM VÁRIOS ELEMENTOS...
+
+
+
+
+
+-> NO FINAL, TEMOS 1 FOOTER...
+
+
+
+
+
+
+
+
+
+--> PARA TELAS MENORES, TEMOS O HAMBURGER MENU,
+    E TEMOS O STACKING...
+
+
+
+
+
+
+
+
+
+
+
+
+
+quando fica mobile, temos uma orientação diferente, e aí 
+diferentes images nos elementos...
+
+
+
+
+
+
+
+
+
+OK... VAMOS COMEÇAR...

@@ -1,0 +1,511 @@
+
+
+
+
+
+
+
+
+OK... AGORA VEREMOS O MOBILE MENU...
+
+
+
+
+
+
+
+
+
+
+
+
+-> PRECISAMOS FOCAR EM 2 COISAS:
+
+
+
+
+
+
+
+1) CONSTRUIR O HAMBURGER MENU (3 lines para criar o ícone).. 
+
+
+
+
+
+
+2) TEREMOS UMA PEQUENA ANIMATION, PARA TRANSFORMAR O HAMBURGER MENU EM UM X (já fiz isso, uma vez, em um dos meus sites)...
+
+
+
+
+
+
+
+3) POR FIM, TEREMOS O ACTUAL MENU A SER EXIBIDO...
+
+
+
+
+
+
+
+
+
+
+FAREMOS 1 POUCO DE CUSTOM CSS E 1 POUCO DE JAVASCRIPT, PARA FAZER O ADD E REMOVE DE CLASSES...
+
+
+
+
+
+
+
+
+
+
+
+--> ESSE MENU SERÁ USADO EM PROJETOS FUTUROS, TAMBÉM..
+
+
+
+
+
+
+
+PRIMEIRAMENTE, NÃO QUEREMOS QUE  ESSE BUTTON SEJA EXIBIDO EM TELAS MEDIUM E HIGHER,
+POR ISSO ESCREVEMOS ASSIM:
+
+
+
+
+
+  <div class="md:hidden"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+        <!-- HAMBURGER BUTTON -->
+        <div class="md:hidden">
+          <button
+            class="z-40 block hamburger md:hidden focus:outline-none"
+          ></button>
+        </div>
+
+
+
+        queremos que seja block em dispositivos pequenos, mas 
+
+        none em dispositivos medium e higher..
+
+
+
+        deixamos 'z-40' para posicionar acima no dom,
+
+
+        e deixamos 
+
+        'focus:outline-none',
+
+        para remover o focus feio quando clicamos nesse button...
+
+
+
+
+        deixamos uma class de 'hamburger', que será nossa class custom,
+
+        que escreveremos lá no style.css...
+
+
+
+
+
+
+
+
+
+DENTRO DO BUTTON, TEREMOS 3 LINES, E ELAS SERÃO CRIADAS COM 
+CSS...
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+      <!-- HAMBURGER BUTTON -->
+        <div class="md:hidden">
+          <button
+            type="button"
+            id="menu-btn"
+            class="z-40 block hamburger md:hidden focus:outline-none"
+          >
+            <span class="hamburger-top"></span>
+            <span class="hamburger-middle"></span>
+            <span class="hamburger-bottom"></span>
+          </button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+
+NÃO HÁ NADA AQUI, AINDA, 
+
+
+NADA A VER,
+
+
+MAS VAMOS ADICIONAR ISSO COM CSS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PODERÍAMOS TER UM SVG COM 3 LINES,
+    MAS AÍ 
+
+    NÃO PODERÍAMOS TER A ANIMATION 
+
+
+    DISPARADA QUANDO ESSE HAMBURGER BUTTON 
+
+    É CLICADO...
+
+
+
+
+
+
+
+--> CRIAR ESSE HAMBURGER MENU DÁ 1 POUCO MAIS DE TRABALHO,
+    MAS ASSIM QUE VC TEM ELE CRIADO, PODE O REUTILIZAR EM QUANTOS PROJECTS QUISER...
+
+
+
+
+
+
+
+
+
+
+
+    -> OK.. CRIAMOS UM STYLE PARA O BURGER MENU,
+
+
+    TIPO ASSIM:
+
+
+
+
+
+
+
+/* Hamburger */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+COM ISSO, A APARENCIA DO NEGÓCIO VAI SER 1 'SINGLE LINE',
+
+
+MAS ELAS SÃO ACTUALLY 3 LINES, 1 em cima da outra... (por conta dos estilos de baixo)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... 
+
+
+
+
+
+
+
+
+AGORA VAMOS PEGAR O STYLING DO 'MIDDLE',
+
+
+e adicionar mais coisas... vamos mudar sua position, com 'transform'...
+
+
+
+EX:
+
+
+
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(-7px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, FICAMOS COM 3 LINES MESMO...
+
+
+
+
+TEMOS EVEN SPACING ENTRE OS 3 ITEMS...
+
+
+
+
+
+
+
+
+
+
+-> PARA FAZER ESSES ITEMS FICAREM COM A APARENCIA DE 'X',
+    TEREMOS QUE DEPENDER DO ADD DE CLASSES..
+
+
+
+
+
+
+
+
+    --> QUANDO FOR ADICIONADA UMA CLASS DE 'open' a esse elemento,
+
+        queremos que ele fique com uma aparencia de 'X'...
+
+
+
+
+
+--> TESTAMOS ISSO, COM 1 CLASS DE 'open' escrita manualmente no hamburger menu...
+
+
+
+
+
+
+
+
+
+
+
+
+O CÓDIGO FICOU TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+/* Hamburger */
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background: #fff;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+
+
+
+
+
+
+
+
+
+       <!-- HAMBURGER BUTTON -->
+          <div class="md:hidden">
+            <button
+              type="button"
+              id="menu-btn"
+              class="open z-40 block hamburger md:hidden focus:outline-none"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NA PRÓXIMA AULA, MEXEREMOS COM O MENU, E SÓ ENTÃO MEXEREMOS COM O JAVASCRIPT...
