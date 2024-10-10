@@ -1,5 +1,8 @@
 # loopStudiosTraining
 
+[![en](https://img.shields.io/badge/lang-en-red.svg?style=flat-square)](https://github.com/nothingnothings/loopStudiosTraining)
+[![pt-br](https://img.shields.io/badge/lang-pt--br-green.svg?style=flat-square)](https://github.com/nothingnothings/loopStudiosTraining/blob/master/README.pt-br.md)
+
 This README provides an overview of the `index.html` file for the LoopStudiosTraining project, focusing on the Tailwind CSS classes and functionality used throughout the document. The file is structured into several key sections, each utilizing various Tailwind utilities to create a responsive and visually appealing layout.
 
 ![screenshot2](screenshot2.png)
